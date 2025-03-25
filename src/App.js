@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
+import avatar from './assets/w3school/avatar2.png';
+
 
 // styled component
 
@@ -7,7 +9,8 @@ import styled from "styled-components";
 const Menu = styled.div`
   display: none;
   @media (min-width: 998px){
-    display: block;
+    display: flex;
+    flex-direction: column;
     width: 20vw;
     height: 100vh;
     background-color: white;
@@ -26,8 +29,6 @@ const MenunBoard = styled.div`
   height:100vh;
 `
 
-
-
 const Bar = styled.div`
   background-color: black;
   width: 100vw;
@@ -44,26 +45,46 @@ const Logo = styled.div`
   padding-right:25px;
   padding-top:15px;
 `
-const ProfileImage = styled.div`
-  background-image: url('/avatar2.png');
-  background-size: cover;
-  background-position: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-`
 
 const Welcome = styled.div`
-  font-size:18px;
+  font-size:15px;
+  padding-top: 15px;
+  
+  
 `
 const LetternIcon = styled.div`
   display:flex;
   flex-direction:column;
+  flex-grow:1;
+  justify-content:center;
+  padding-left:10px;
+  align-items: center;
 `
+
+const Icon = styled.div`
+  display:flex;
+  flex-direction:row;
+  flex-grow:1;
+  justify-content:center;
+  align-items: center;
+`
+
 const ProfilenLetter = styled.div`
   display:flex;
   flex-direction:row;
+  padding-right: 15px;
+  padding-left:16px;
 `
+
+const ProfileWrapper = styled.div`
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: 10px;
+  flex-grow:0;
+  
+`
+
 function App() {
   return (
   <div>
@@ -75,11 +96,21 @@ function App() {
     <MenunBoard>
       <Menu>
         <ProfilenLetter>
-          <ProfileImage/>
+        <ProfileWrapper>
+        <img src={avatar} alt="profile" style={{ width: "100%", height: "100%", borderRadius: "50%" }} />
+        </ProfileWrapper>
+           
           <LetternIcon>
             <Welcome>
               Welcome, <b>Mike</b>
             </Welcome>
+            <Icon>
+              <i class="fa fa-envelope"></i>
+              <i class="fa fa-users fa-fw"></i>
+              <i class="fa fa-cog"></i>
+
+            </Icon>
+            
           </LetternIcon>
           
         </ProfilenLetter>
