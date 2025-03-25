@@ -1,7 +1,10 @@
-.profile{
-    background-size: cover;
-    background-position: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+.Mydashboard{
+    margin-top:15px;
+    font-size: 20px;
+    padding-left: 20px;
+}
+
+.grayTitle{
+    display:flex;
+    flex-direction: row;
 }
