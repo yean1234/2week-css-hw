@@ -23,10 +23,12 @@ const GrayBoard = styled.div`
   flex-grow: 1;
   background-color: rgb(234, 231, 230);
   height: 100vh;
+  overflow-x:hidden;
 `
 const MenunBoard = styled.div`
   display:flex;
   flex-direction: row;
+  overflow: hidden; 
   width:100vw;
   height:100vh;
 `
@@ -160,7 +162,7 @@ const BigsquareContainer = styled.div`
   display:flex;
   margin-top: 10px;
   width:100%;
-  height:17%;
+  height:130px;;
   flex-direction:row;
   gap: 15px;
   justify-content:center;
@@ -169,10 +171,29 @@ const BigsquareContainer = styled.div`
 const Square = styled.div`
   width:23%;
   height:100%;
-  background-color:teal;
   background-color:${(props) => props.squareColor};
  
 `
+const SquareIconContainer = styled.div`
+  margin-top:15px;
+  display:flex;
+  flex-direction:row;
+  color:white;
+  align-items:center;
+  justify-content:space-between;
+
+`
+
+const SquareIcon = styled.div`
+  font-size: 3em;
+  margin-left: 10px;
+  margin-right:10px;
+`
+const SquareLetter = styled.div`
+  padding-right:15px;
+  font-size:30px;
+`
+
 
 function App() {
   return (
@@ -292,9 +313,37 @@ function App() {
         </GrayTitleContainer>
         <BigsquareContainer>
           <Square squareColor='rgb(244, 67, 54)'>
-            
+              <SquareIconContainer>
+                <SquareIcon>
+                  <i class="fa fa-comment w3-xxxlarge"></i>
+                </SquareIcon>
+                <SquareLetter>
+                  52
+                </SquareLetter>
+              </SquareIconContainer>
+              <p style={{
+              fontSize: '20px', 
+              paddingLeft: '10px',
+              color: 'white',
+              margin: '0px'
+              }}>Messages</p>
           </Square>
-          <Square squareColor='rgb(33, 150, 243)' />
+          <Square squareColor='rgb(33, 150, 243)' >
+            <SquareIconContainer>
+                <SquareIcon>
+                  <i class="fa fa-eye w3-xxxlarge"></i>
+                </SquareIcon>
+                <SquareLetter>
+                  99
+                </SquareLetter>
+            </SquareIconContainer>
+            <p style={{
+              fontSize: '20px', 
+              paddingLeft: '10px',
+              color: 'white',
+              margin: '0px'
+              }}>Views</p>
+          </Square>
           <Square squareColor='rgb(0, 150, 136)'/>
           <Square squareColor='rgb(255, 152, 0)'/>
         </BigsquareContainer>

@@ -22,7 +22,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://github.com/yean1234/2week-css-hw.git",
+  "homepage": "https://yean1234.github.io/2week-css-hw/",
   "eslintConfig": {
     "extends": [
       "react-app",
