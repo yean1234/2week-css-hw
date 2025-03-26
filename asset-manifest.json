@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/yean1234/2week-css-hw.git/static/js/main.cc02febe.js",
-    "index.html": "/yean1234/2week-css-hw.git/index.html",
-    "main.cc02febe.js.map": "/yean1234/2week-css-hw.git/static/js/main.cc02febe.js.map"
+    "main.js": "/2week-css-hw/static/js/main.aa7ae17e.js",
+    "index.html": "/2week-css-hw/index.html",
+    "main.aa7ae17e.js.map": "/2week-css-hw/static/js/main.aa7ae17e.js.map"
   },
   "entrypoints": [
-    "static/js/main.cc02febe.js"
+    "static/js/main.aa7ae17e.js"
   ]
 }
