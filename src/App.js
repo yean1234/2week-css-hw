@@ -2,6 +2,11 @@ import React from 'react';
 import styled from "styled-components";
 import avatar from './assets/w3school/avatar2.png';
 import Map from './assets/w3school/region.jpg';
+import Jill from './assets/w3school/avatar5.png';
+import Jane from './assets/w3school/avatar6.png';
+import John from './assets/w3school/avatar3.png';
+import Bo from './assets/w3school/avatar1.png';
+
 //import styles from './css/App.css';
 
 
@@ -10,7 +15,7 @@ import Map from './assets/w3school/region.jpg';
 
 
 const Menu = styled.div`
-  display: none;
+  display:none;
   @media (min-width: 998px){
     display: flex;
     flex-direction: column;
@@ -153,6 +158,7 @@ const GrayTitleContainer = styled.div`
   margin-top:30px;
   flex-direction:row;
   align-items:center;
+  padding-left:20px;
 `
 const GrayTitleIcon = styled.div`
   font-size: 22px;
@@ -163,16 +169,28 @@ const BigsquareContainer = styled.div`
   display:flex;
   margin-top: 10px;
   width:100%;
-  height:130px;;
+  height:130px;
   flex-direction:row;
   gap: 15px;
   justify-content:center;
+  @media (max-width: 768px) {
+    display:flex;
+    margin-top:25%;
+    width:100vw;
+    height:25%;
+    flex-direction:column;
+}
   
 `
 const Square = styled.div`
   width:23%;
   height:100%;
   background-color:${(props) => props.squareColor};
+  @media (max-width: 768px) {
+    width:100%;
+    height:100%;
+    background-color:${(props) => props.squareColor};
+}
  
 `
 const SquareIconContainer = styled.div`
@@ -182,6 +200,7 @@ const SquareIconContainer = styled.div`
   color:white;
   align-items:center;
   justify-content:space-between;
+  
 
 `
 
@@ -196,33 +215,58 @@ const SquareLetter = styled.div`
 `
 const RegionContainer = styled.div`
   display:flex;
-  flex-direction:row;
+  flex-direction:column;
   padding:20px;
+  width:40%;
 `
 const MiddleTitle = styled.div`
   font-size:20px;
   font-weight: lighter;
+  padding-left: ${(props) => (props.paddingLeft? props.paddingLeft : "unset")};
   flex-grow:  ${(props) => (props.flexGrow ? props.flexGrow : "unset")};
+  margin-top:${(props) => (props.counTop? props.counTop : "unset")};
 `
 const MapContainer = styled.div`
   display:flex;
   flex-direction: row;
+  margin-bottom: 50px;
+  @media (max-width: 768px) {
+    margin-top: 130px;
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
 `
+const MapMediaQuery = styled.div`
+  @media (max-width: 768px) {
+    width:100vw;
+    object-fit:fill;
+}
+`
+
 const FeedsContainer = styled.div`
+  margin-top:20px;
   display:flex;
-  flex-grow:1;
   flex-direction:column;
   padding-right:20px;
   padding-left:20px;
-  width:auto;
+  width:60%;
 `
 const FeedsElementContainer = styled.div`
   display:flex;
   flex-direction:row;
   background-color:  ${(props) => (props.backcolor? props.backcolor : "unset")};
   width:100%;
-  height:35px;
+  height:37.5px;
   align-items:center;
+  @media (max-width: 768px) {
+    display:flex;
+    flex-direction:row;
+    background-color:  ${(props) => (props.backcolor? props.backcolor : "unset")};
+    width:90vw;
+    height:37.5px;
+    align-items:center;
+}
 `
 const FeedsIcon = styled.div`
   flex-grow:${(props) => (props.iconGrow ? props.iconGrow : "1")};
@@ -241,6 +285,157 @@ const FeedsMins = styled.div`
   font-weight: lighter;
   font-style: oblique;
 `
+const Subheading = styled.div`
+  margin-top:15px;
+  font-size:15px;
+  font-weight: lighter;
+  margin-bottom:15px;
+  padding-left:20px;
+`
+const Backgraph = styled.div`
+  width:96%;
+  height:38.5px;
+  background-color:rgb(158, 158, 158);
+  margin-left:20px;
+  margin-right:20px;
+`
+const Colorgraph = styled.div`
+  width:${(props) => props.graphWidth};;
+  height:38.5px;
+  background-color:${(props) => props.graphColor};
+
+`
+const GraphNumber = styled.div`
+  display:flex;
+  font-size:15px;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  padding-top:7px;
+
+`
+const CountryContainer = styled.div`
+  margin-left:20px;
+  margin-top:15px;
+  margin-right:20px;
+`
+const CountryElementContainer = styled.div`
+  display:flex;
+  background-color:${(props) => (props.backColor? props.backColor : "white")};
+  width:97.6%;
+  height:38.5px;
+  border: solid 1px rgb(216, 216, 216);
+  border-width: thin;
+  border-bottom-style:none;
+  align-items:center;
+  padding-left:20px;
+  &:hover {
+    background: rgb(197, 196, 196);
+    cursor: pointer;
+  }
+`
+const CountryName = styled.div`
+  font-size:15px;
+  flex-grow:${(props) => (props.nameGrow? props.nameGrow : "1.5")};
+`
+
+const RecentContainer = styled.div`
+  margin-left:20px;
+  margin-top:15px;
+  margin-right:20px;
+`
+const RecentElementContainer = styled.div`
+  display:flex;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  background-color: white;
+  width:97%;
+  height:36px;
+  padding:16px;
+  border-bottom-width: thin;
+  border-bottom:solid 1px rgb(216, 216, 216);
+  align-items:center;
+  
+`
+const RecentName = styled.div`
+  font-size:24px;
+`
+const RecentProfile = styled.div`
+  width:${(props) => (props.profileWidth? props.profileWidth : "35px")};
+  height:${(props) => (props.profileHeight? props.profileHeight : "34.93px")};
+  border-radius: 50%;
+  margin-right: ${(props) => (props.marginRight? props.marginRight : "35px")};
+  object-fit: contain;
+
+`
+const CountryNum = styled.div`
+  font-size:15px;
+  //border-left: solid 2px rgb(216, 216, 216);
+  flex-grow:1;
+`
+const MoreCountry = styled.div`
+  display:inline-block;
+  background-color:rgb(97, 97, 97);
+  color:white;
+  align-items:center;
+  font-size:15px;
+  margin:20px;
+  padding:10px;
+  gap:10px;
+  &:hover {
+    background: rgb(197, 196, 196);
+    cursor: pointer;
+    color:black;
+  }
+  i {
+    margin-left: 10px;  
+  }
+`
+const CommentContainer = styled.div`
+  margin-left:20px;
+  margin-right:20px;
+  margin-top:10px;
+`
+const CommentRowContainer = styled.div`
+  display: flex;
+  align-items: flex-start; /* 텍스트가 프로필 이미지 상단 정렬 */
+  margin-bottom: 20px;
+`;
+
+
+const CommentBigTitle = styled.div`
+  font-size:20px;
+  display:inline-block;
+`
+const CommentSmallTitle = styled.div`
+  font-size:15px;
+  font-weight:lighter;
+  padding-left:3px;
+  color: rgb(89, 89, 89);
+  padding-top:5px;
+  display:inline-block;
+ 
+`
+
+const CommentContent = styled.div`
+  flex: 1; 
+  margin-left:40px;
+`;
+
+const LastBlock = styled.div`
+  width:100%;
+  height:208.297px;
+  background-color:rgb(97, 97, 97);
+  padding: 32px 16px;
+`
+const BlockRowContainer = styled.div`
+  display:flex;
+  flex-direction:row;
+`
+const BlockContentContainer = styled.div`
+  flex-grow:1;
+  padding: 0.15px 16px;
+`
+
 function App() {
   return (
   <div>
@@ -423,17 +618,27 @@ function App() {
               }}>users</p>
           </Square>
         </BigsquareContainer>
+        <MapContainer>
         <RegionContainer>
           <MiddleTitle flexGrow='1'>
             Regions
           </MiddleTitle>
-          <MiddleTitle flexGrow='2.5'>
-            Feeds
-          </MiddleTitle>
+          <MapMediaQuery>
+          <img src={Map} alt="Map" style={{ paddingTop: '20px', 
+            width: "90%", 
+            height: "auto" , 
+            maxHeight: '269.5px',
+            }} />
+          </MapMediaQuery>
         </RegionContainer>
-        <MapContainer>
-          <img src={Map} alt="Map" style={{ paddingLeft: '20px', width: "31%", height: "auto" }} />
-          <FeedsContainer>
+        <FeedsContainer>
+        <h4 style={{
+          fontWeight:'lighter', 
+          fontSize: '20px', 
+          marginBottom: '10px',
+          marginTop: '10px'}}>
+              Feeds
+        </h4>
             <FeedsElementContainer backcolor='white'>
               <FeedsIcon iconColor='rgb(33, 150, 243)'>
                 <i class="fa fa-user w3-text-blue w3-large"></i>
@@ -486,7 +691,157 @@ function App() {
           </FeedsContainer>
         </MapContainer>
         
+        <MiddleTitle paddingLeft='20px'>General Stats</MiddleTitle>
+        <Subheading>New Visitors</Subheading>
+        <Backgraph>
+          <Colorgraph graphColor='rgb(76, 175, 80)' graphWidth='25%'>
+            <GraphNumber>+25%</GraphNumber>
+          </Colorgraph>
+        </Backgraph>
+        <Subheading>New Users</Subheading>
+        <Backgraph>
+          <Colorgraph graphColor='rgb(255, 152, 0)' graphWidth='50%'>
+            <GraphNumber>50%</GraphNumber>
+          </Colorgraph>
+        </Backgraph>
+        <Subheading>Bounce Rate</Subheading>
+        <Backgraph>
+          <Colorgraph graphColor='rgb(244, 67, 54)' graphWidth='75%'>
+            <GraphNumber>75%</GraphNumber>
+          </Colorgraph>
+        </Backgraph>
+        <MiddleTitle paddingLeft='20px' counTop='50px'>Countries</MiddleTitle>
+        <CountryContainer>
+          <CountryElementContainer>
+            <CountryName>United States</CountryName>
+            <CountryNum>65%</CountryNum>
+          </CountryElementContainer>
+          <CountryElementContainer backColor='rgb(242, 238, 238)'>
+            <CountryName nameGrow='1.74'>UK</CountryName>
+            <CountryNum>15.7%</CountryNum>
+          </CountryElementContainer>
+          <CountryElementContainer >
+            <CountryName nameGrow='1.65'>Russia</CountryName>
+            <CountryNum>5.6%</CountryNum>
+          </CountryElementContainer>
+          <CountryElementContainer backColor='rgb(242, 238, 238)'>
+            <CountryName nameGrow='1.66'>Spain</CountryName>
+            <CountryNum>2.1%</CountryNum>
+          </CountryElementContainer>
+          <CountryElementContainer >
+            <CountryName nameGrow='1.67'>India</CountryName>
+            <CountryNum>1.9%</CountryNum>
+          </CountryElementContainer>
+          <CountryElementContainer backColor='rgb(242, 238, 238)'>
+            <CountryName nameGrow='1.65'>France</CountryName>
+            <CountryNum>1.5%</CountryNum>
+          </CountryElementContainer>
+        </CountryContainer>
+        <MoreCountry>
+          More Countries
+          <i class="fa fa-arrow-right"></i>
+        </MoreCountry>
+        <MiddleTitle paddingLeft='20px' counTop='30px'>Recent Users</MiddleTitle>
+        <RecentContainer>
+          <RecentElementContainer>
+            <RecentProfile marginRight='30px' >
+            <img src={avatar} alt="avatar" style={{width: '100%', height: '100%', borderRadius: "50%"}} />
+            </RecentProfile>
+            <RecentName>Mike</RecentName>
+          </RecentElementContainer>
+          <RecentElementContainer>
+            <RecentProfile>
+            <img src={Jill} alt="Jill" style={{width: '100%', height: '100%', borderRadius: "50%"}} />
+            </RecentProfile>
+            <RecentName>Jill</RecentName>
+          </RecentElementContainer>
+          <RecentElementContainer>
+            <RecentProfile>
+            <img src={Jane} alt="Jane" style={{width: '100%', height: '100%', borderRadius: "50%"}} />
+            </RecentProfile>
+            <RecentName>Jane</RecentName>
+          </RecentElementContainer>
+        </RecentContainer>
+        <MiddleTitle paddingLeft='20px' counTop='30px'>Recent Comments</MiddleTitle>
+        <CommentContainer>
+          <CommentRowContainer>
+            <RecentProfile profileWidth='96px' profileHeight = '96px' marginRight='20px' > 
+              <img src={John} alt="John" style={{width: '100%', height: '100%', borderRadius: "50%"}} />
+            </RecentProfile>
+            <CommentContent>
+              <CommentBigTitle>John</CommentBigTitle>
+              <CommentSmallTitle>Sep 29, 2014, 9:12 PM</CommentSmallTitle>
+              <p style={{marginBottom: '0px'}}>Keep up the GREAT work! I am cheering for you!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+              <p style={{marginTop: '0px'}}>tempor incididunt ut labore et dolore magna aliqua.</p>
+            </CommentContent>
+ 
+          </CommentRowContainer>
+          <CommentRowContainer>
+            <RecentProfile profileWidth='96px' profileHeight = '96px' marginRight='20px' > 
+              <img src={Bo} alt="Bo" style={{width: '100%', height: '100%', borderRadius: "50%"}} />
+            </RecentProfile>
+            <CommentContent>
+              <CommentBigTitle>Bo</CommentBigTitle>
+              <CommentSmallTitle> Sep 28, 2014, 10:15 PM</CommentSmallTitle>
+              <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </CommentContent>
+ 
+          </CommentRowContainer>
+        </CommentContainer>
+        <LastBlock>
+          <BlockRowContainer>
+            <BlockContentContainer>
+              <h5 style={{
+                display: 'block',
+                color: 'white', 
+                fontSize:'17px', 
+                fontWeight:'lighter',
+                borderBottom: 'solid 3px rgb(76, 175, 80)'}}>Demographic</h5>
+                <div style={{color: 'white', fontSize: '15px'}}>
+                  <p>Language</p>
+                  <p>Country</p>
+                  <p>City</p>
+                </div>
+               
+            </BlockContentContainer>
+            <BlockContentContainer>
+              <h5 style={{
+                display: 'block',
+                color: 'white', 
+                fontSize:'17px', 
+                fontWeight:'lighter',
+                borderBottom: 'solid 3px rgb(244, 67, 54)'}}>System</h5>
+                <div style={{color: 'white', fontSize: '15px'}}>
+                  <p>Browser</p>
+                  <p>OS</p>
+                  <p>More</p>
+                </div>
+            </BlockContentContainer>
+            <BlockContentContainer>
+              <h5 style={{
+                display: 'block',
+                color: 'white', 
+                fontSize:'17px', 
+                fontWeight:'lighter',
+                borderBottom: 'solid 3px rgb(255, 152, 0)'}}>Target</h5>
+                <div style={{color: 'white', fontSize: '15px'}}>
+                  <p>Users</p>
+                  <p>Active</p>
+                  <p>Geo</p>
+                  <p>Interests</p>
+                </div>
+            </BlockContentContainer>
+          </BlockRowContainer>
+
+        </LastBlock>
         
+        <h4 style={{fontWeight:'lighter', fontSize: '20px', paddingLeft:'20px'}}>FOOTER</h4>
+        <p style={{fontWeight:'lighter', fontSize: '15px', paddingLeft:'20px'}}>
+          Powered by <a 
+          href='https://www.w3schools.com/w3css/default.asp'
+          style={{color: 'black'}}
+          >w3.css</a>
+        </p>
       </GrayBoard>
     </MenunBoard>
     
