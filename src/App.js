@@ -175,12 +175,17 @@ const BigsquareContainer = styled.div`
   justify-content:center;
   @media (max-width: 768px) {
     display:flex;
-    margin-top:25%;
+    margin-top:10px;
     width:100vw;
     height:25%;
     flex-direction:column;
 }
-  
+`
+const TitleMediaQuery = styled.div`
+  @media (max-width: 768px) {
+    display:flex;
+    flex-direction:column;
+  }
 `
 const Square = styled.div`
   width:23%;
@@ -231,7 +236,7 @@ const MapContainer = styled.div`
   flex-direction: row;
   margin-bottom: 50px;
   @media (max-width: 768px) {
-    margin-top: 130px;
+    margin-top: 60px;
     display:flex;
     flex-direction: column;
     margin-bottom: 50px;
@@ -544,7 +549,8 @@ function App() {
 
 
       <GrayBoard>
-        <GrayTitleContainer>
+      <TitleMediaQuery>
+      <GrayTitleContainer>
           <GrayTitleIcon>
             <i class="fa fa-dashboard"></i>
           </GrayTitleIcon>
@@ -618,6 +624,7 @@ function App() {
               }}>users</p>
           </Square>
         </BigsquareContainer>
+      </TitleMediaQuery>
         <MapContainer>
         <RegionContainer>
           <MiddleTitle flexGrow='1'>
