@@ -1,10 +1,12 @@
 {
   "files": {
-    "main.js": "/2week-css-hw/static/js/main.aa7ae17e.js",
+    "main.js": "/2week-css-hw/static/js/main.2d029d0b.js",
+    "static/media/region.jpg": "/2week-css-hw/static/media/region.7a3adc70a4491f078d1f.jpg",
+    "static/media/avatar1.png": "/2week-css-hw/static/media/avatar1.e20ca47f963c197e488e.png",
     "index.html": "/2week-css-hw/index.html",
-    "main.aa7ae17e.js.map": "/2week-css-hw/static/js/main.aa7ae17e.js.map"
+    "main.2d029d0b.js.map": "/2week-css-hw/static/js/main.2d029d0b.js.map"
   },
   "entrypoints": [
-    "static/js/main.aa7ae17e.js"
+    "static/js/main.2d029d0b.js"
   ]
 }
